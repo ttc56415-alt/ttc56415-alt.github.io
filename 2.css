@@ -1,0 +1,136 @@
+/* 2.css */
+/* ฟอนต์และพื้นฐาน */
+body {
+  font-family: 'Prompt', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fffefb;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ส่วนหัว */
+.main-header {
+  background: linear-gradient(90deg, #ff7043, #ffab40);
+  padding: 20px;
+  color: white;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.main-header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.main-header button {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: white;
+  color: #ff7043;
+  border: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.main-header button:hover {
+  background: #ffe0b2;
+}
+
+/* ส่วนเนื้อหา */
+section {
+  padding: 30px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.intro p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info li {
+  margin: 10px 0;
+}
+
+.info strong {
+  color: #ff5722;
+}
+
+/* แผนที่ */
+.map iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ส่วนท้าย */
+footer {
+  background-color: #eeeeee;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #555;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .main-header h1 {
+    font-size: 1.5em;
+  }
+
+  .main-header button {
+    padding: 6px 12px;
+    font-size: 0.9em;
+  }
+
+  .intro p {
+    font-size: 1em;
+  }
+}
+.menu-links {
+  background-color: #fff3e0;
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 30px;
+  border-top: 4px solid #ff9800;
+}
+
+.menu-links h2 {
+  margin-bottom: 20px;
+  color: #e65100;
+}
+
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.menu-grid a {
+  background-color: #ff7043;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.menu-grid a:hover {
+  background-color: #e64a19;
+}
