@@ -1,0 +1,104 @@
+/* สั่งอาหาร */
+body {
+  font-family: sans-serif;
+  background-color: #fefaf3;
+  color: #333;
+  padding: 20px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.category {
+  margin-top: 20px;
+}
+.menu-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.menu-item {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  width: 200px;
+  background-color: white;
+}
+.menu-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+.cart {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffffffee;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 280px;
+  z-index: 100;
+}
+
+.cart h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+#cart-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.cart button {
+  width: 100%;
+  background-color: #4CAF50;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.cart ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.cart ul li button {
+  background-color: #f44336;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+#success-message {
+  display: none;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fffbe6;
+  border: 2px solid #ffcc00;
+  padding: 30px 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 999;
+  animation: fadeIn 0.6s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
