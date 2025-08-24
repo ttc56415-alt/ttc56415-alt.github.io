@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>หน้าสั่งอาหาร</title>
+  <link rel="stylesheet" href="/1.css">
+</head>
+<body>
+  <header>
+    <button onclick="goBack(index.html)">🔙 กลับหน้าเมนู</button>
+    <h1>สั่งอาหาร</h1>
+  </header>
+      <!-- เมนูต้ม  -->
+  <main>
+    <section class="category">
+      <h2>เมนูต้ม</h2>
+      <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://f.ptcdn.info/360/045/000/oc9ecl2i3yt4Q1or4uX-o.jpg" alt="ต้มยำกุ้ง">
+          <div class="info">
+            <h3>ต้มยำกุ้งน้ำข้น</h3>
+            <p>ราคา: 89 บาท</p>
+            <button onclick="addToCart('ต้มยำกุ้ง', 89)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <!-- เพิ่มเมนูอื่น ๆ ได้ -->
+         <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfwVGfcTStEeNev_p6RVK2NeI-w-4i7LCFEw&s" alt="ต้มข่าไก่">
+          <div class="info">
+            <h3>ต้มข่าไก่</h3>
+            <p>ราคา: 79 บาท</p>
+            <button onclick="addToCart('ต้มข่าไก่', 79)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://assets.unileversolutions.com/recipes-v2/117787.jpg" alt="แกงอ่อมหมู">
+          <div class="info">
+            <h3>แกงอ่อมหมู</h3>
+            <p>ราคา: 89 บาท</p>
+            <button onclick="addToCart('แกงอ่อมหมู', 89)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://www.sgethai.com/wp-content/uploads/2022/11/10.jpg" alt="แกงส้มชะอมไข่กุ้ง">
+          <div class="info">
+            <h3>แกงส้มชะอมไข่กุ้ง</h3>
+            <p>ราคา: 120 บาท</p>
+            <button onclick="addToCart('แกงส้มชะอมไข่กุ้ง', 120)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://img.kapook.com/u/2023/wanwanat/2082317182.jpg" alt="ต้มแซ่บกระดูกอ่อน">
+          <div class="info">
+            <h3>ต้มแซ่บกระดูกอ่อน</h3>
+            <p>ราคา: 79 บาท</p>
+            <button onclick="addToCart('ต้มแซ่บกระดูกอ่อน', 79)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://img.wongnai.com/p/1920x0/2017/12/01/3f437fb5eff34ad7a797228d8e3aa072.jpg" alt="แกงเห็ดสามอย่าง">
+          <div class="info">
+            <h3>แกงเห็ดสามอย่าง</h3>
+            <p>ราคา: 79 บาท</p>
+            <button onclick="addToCart('แกงเห็ดสามอย่าง', 79)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://recipe.sgethai.com/wp-content/uploads/2025/04/16042024-tom-yum-pla-nil9.webp" alt="ต้มยำปลานิล">
+          <div class="info">
+            <h3>ต้มยำปลานิล</h3>
+            <p>ราคา: 89 บาท</p>
+            <button onclick="addToCart('ต้มยำปลานิล', 89)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://img.kapook.com/u/2018/surauch/cooking/co1/tom2_1.jpg" alt="ต้มส้มปลาทู">
+          <div class="info">
+            <h3>ต้มส้มปลาทู</h3>
+            <p>ราคา: 79 บาท</p>
+            <button onclick="addToCart('ต้มส้มปลาทู', 79)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+        <!-- เมนูทอด -->
+    <section class="category">
+      <h2>เมนูทอด</h2>
+      <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://i.pinimg.com/736x/b4/7b/38/b47b388aef314f7c35cc0b3bac7bfd72.jpg" alt="ปลาทูทอดน้ำปลา">
+          <div class="info">
+            <h3>ปลาทูทอดน้ำปลา</h3>
+            <p>ราคา: 79 บาท</p>
+            <button onclick="addToCart('ปลาทูทอดน้ำปลา', 79)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://img.wongnai.com/p/1920x0/2019/08/22/9e525ec1ede6433b977231724b9c4746.jpg" alt="ไก่ทอดสมุนไพร">
+          <div class="info">
+            <h3>ไก่ทอดสมุนไพร</h3>
+            <p>ราคา: 89 บาท</p>
+            <button onclick="addToCart('ไก่ทอดสมุนไพร', 89)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://s359.kapook.com/pagebuilder/b5a76fcc-4fcb-4efb-9aca-54e3f33994da.jpg" alt="ปลาหมึกทอดกระเทียม">
+          <div class="info">
+            <h3>ปลาหมึกทอดกระเทียม</h3>
+            <p>ราคา: 60 บาท</p>
+            <button onclick="addToCart('ปลาหมึกทอดกระเทียม', 60)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://i.ytimg.com/vi/44lBeWFoEcg/maxresdefault.jpg" alt="ปลานิลทอดน้ำปลา">
+          <div class="info">
+            <h3>ปลานิลทอดน้ำปลา</h3>
+            <p>ราคา: 89 บาท</p>
+            <button onclick="addToCart('ปลานิลทอดน้ำปลา', 89)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://s359.kapook.com/pagebuilder/c2b118ed-2478-4730-8228-bb58c18267fd.jpg" alt="กุ้งชุบแป้งทอด">
+          <div class="info">
+            <h3>กุ้งชุบแป้งทอด</h3>
+            <p>ราคา: 89 บาท</p>
+            <button onclick="addToCart('กุ้งชุบแป้งทอด', 89)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://s.isanook.com/wo/0/ud/50/252221/tnlsss.jpg?ip/crop/w670h402/q80/jpg" alt="ปีกไก่ทอดน้ำปลา">
+          <div class="info">
+            <h3>ปีกไก่ทอดน้ำปลา</h3>
+            <p>ราคา: 79 บาท</p>
+            <button onclick="addToCart('ปีกไก่ทอดน้ำปลา', 79)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://www.pitchameat.com/wp-content/uploads/2023/08/1-1.webp" alt="หมูแดดเดียว">
+          <div class="info">
+            <h3>หมูแดดเดียว</h3>
+            <p>ราคา: 79 บาท</p>
+            <button onclick="addToCart('หมูแดดเดียว', 79)">➕ เพิ่ม</button>
+          </div>
+        </div>
+    
+      </div>
+    </section>
+
+    <!-- เพิ่มเมนูยำ / ทอด / ของหวาน ฯลฯ -->
+     <!-- เมนูผัด  -->
+    <section class="category">
+      <h2>เมนูยำ/ลาบ</h2>
+      <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://api2.krua.co/wp-content/uploads/2020/06/SlideBanner1140x507-233.jpg" alt="ลาบหมู">
+          <div class="info">
+            <h3>ลาบหมู</h3>
+            <p>ราคา: 59 บาท</p>
+            <button onclick="addToCart('ลาบหมู', 59)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://longdan.co.uk/cdn/shop/articles/spicy-mixed-seafood-salad-with-thai-food-ingredients_1200x.jpg?v=1700554699" alt="ยำรวมทะเล">
+          <div class="info">
+            <h3>ยำรวมทะเล</h3>
+            <p>ราคา: 60 บาท</p>
+            <button onclick="addToCart('ยำรวมทะเล', 60)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://creamcuisine.wordpress.com/wp-content/uploads/2011/07/1.jpg?w=1024" alt="ลาบปลาดุกทอด">
+          <div class="info">
+            <h3>ลาบปลาดุกทอด</h3>
+            <p>ราคา: 59 บาท</p>
+            <button onclick="addToCart('ลาบปลาดุกทอด', 59)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://f.ptcdn.info/170/073/000/qrmvyr101gk7c5an510y-o.jpg" alt="ยำหอยนางรม">
+          <div class="info">
+            <h3>ยำหอยนางรม</h3>
+            <p>ราคา: 79 บาท</p>
+            <button onclick="addToCart('ยำหอยนางรม', 79)">➕ เพิ่ม</button>
+          </div>
+        </div>
+        <div class="menu-list">
+        <div class="menu-item">
+          <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/a7/f9/c1/caption.jpg" alt="ลาบวุ้นเส้นทะเล">
+          <div class="info">
+            <h3>ลาบวุ้นเส้นทะเล</h3>
+            <p>ราคา: 89 บาท</p>
+            <button onclick="addToCart('ลาบวุ้นเส้นทะเล', 89)">➕ เพิ่ม</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- เมนูยำ/ลาบ -->
+    <search class="category">
+      <h2>เมนูผัด</h2>
+      <div class="menu-list">
+      <div class="menu-item">
+        <img src="https://s.isanook.com/wo/0/ud/34/174765/food.jpg" alt="ผัดฉ่าทะเล">
+        <div class="info">
+          <h3>ผัดฉ่าทะเล</h3>
+          <p>ราคา: 89 บาท</p>
+          <button onclick="addToCart('ผัดฉ่าทะเล', 89)">➕ เพิ่ม</button>
+        </div>
+      </div>
+      <div class="menu-list">
+      <div class="menu-item">
+        <img src="https://s359.kapook.com/pagebuilder/e889e95b-5d6e-4b26-937b-6419c0897189.jpg" alt="ผัดหมี่โคราช">
+        <div class="info">
+          <h3>ผัดหมี่โคราช</h3>
+          <p>ราคา: 59 บาท</p>
+          <button onclick="addToCart('ผัดหมี่โคราช', 59)">➕ เพิ่ม</button>
+        </div>
+      </div>
+      <div class="menu-list">
+      <div class="menu-item">
+        <img src="https://bing.com/th?id=OSK.be430b64fd37923a33fa66583d89bc6d" alt="ข้าวผัดกุ้ง">
+        <div class="info">
+          <h3>ข้าวผัดกุ้ง</h3>
+          <p>ราคา: 59 บาท</p>
+          <button onclick="addToCart('ข้าวผัดกุ้ง', 59)">➕ เพิ่ม</button>
+        </div>
+      </div>
+      <div class="menu-list">
+      <div class="menu-item">
+        <img src="https://s359.kapook.com/pagebuilder/4c9668dd-8708-4693-8ef9-6e14ac29a75f.jpg" alt="ผัดพริกแกงทะเล">
+        <div class="info">
+          <h3>ผัดพริกแกงทะเล</h3>
+          <p>ราคา: 79 บาท</p>
+          <button onclick="addToCart('ผัดพริกแกงทะเล', 79)">➕ เพิ่ม</button>
+        </div>
+      </div>
+
+      </div>
+      </search>
+
+       <!-- เมนูยำ/ลาบ -->
+    <search class="category">
+      <h2>เมนูผัด</h2>
+      <div class="menu-list">
+      <div class="menu-item">
+        <img src="https://s.isanook.com/wo/0/ud/34/174765/food.jpg" alt="ผัดฉ่าทะเล">
+        <div class="info">
+          <h3>ผัดฉ่าทะเล</h3>
+          <p>ราคา: 89 บาท</p>
+          <button onclick="addToCart('ผัดฉ่าทะเล', 89)">➕ เพิ่ม</button>
+        </div>
+      </div>
+      <div class="menu-list">
+      <div class="menu-item">
+        <img src="https://s359.kapook.com/pagebuilder/e889e95b-5d6e-4b26-937b-6419c0897189.jpg" alt="ผัดหมี่โคราช">
+        <div class="info">
+          <h3>ผัดหมี่โคราช</h3>
+          <p>ราคา: 59 บาท</p>
+          <button onclick="addToCart('ผัดหมี่โคราช', 59)">➕ เพิ่ม</button>
+        </div>
+      </div>
+      <div class="menu-list">
+      <div class="menu-item">
+        <img src="https://bing.com/th?id=OSK.be430b64fd37923a33fa66583d89bc6d" alt="ข้าวผัดกุ้ง">
+        <div class="info">
+          <h3>ข้าวผัดกุ้ง</h3>
+          <p>ราคา: 59 บาท</p>
+          <button onclick="addToCart('ข้าวผัดกุ้ง', 59)">➕ เพิ่ม</button>
+        </div>
+      </div>
+      <div class="menu-list">
+      <div class="menu-item">
+        <img src="https://s359.kapook.com/pagebuilder/4c9668dd-8708-4693-8ef9-6e14ac29a75f.jpg" alt="ผัดพริกแกงทะเล">
+        <div class="info">
+          <h3>ผัดพริกแกงทะเล</h3>
+          <p>ราคา: 79 บาท</p>
+          <button onclick="addToCart('ผัดพริกแกงทะเล', 79)">➕ เพิ่ม</button>
+        </div>
+      </div>
+
+      </div>
+      </search>
+
+       <section class="cart">
+      <h2>🛒 ตะกร้าอาหาร</h2>
+      <ul id="cart-list"></ul>
+      <p id="total">รวม: 0 บาท</p>
+      <button onclick="placeOrder()">✅ สั่งอาหาร</button>
+    </section>
+  </main>
+
+  <div id="success-message">🎉 สั่งอาหารเสร็จสิ้น 🎉</div>
+
+  <script src="/2.js"></script>
+</body>
+</html>
