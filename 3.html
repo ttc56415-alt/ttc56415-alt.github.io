@@ -1,99 +1,133 @@
-<!-- 3.html -->
 <!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>เมนูยำ/ลาบ - ร้านอาหารอีสาน</title>
-  <link rel="stylesheet" href="style.css">
+  <title>เมนูอาหาร</title>
+  <style>
+    body {
+      font-family: "Prompt", sans-serif;
+      background: #fff8f0;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      padding: 20px;
+      color: #d35400;
+    }
+    .menu-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .menu-item {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 220px;
+      text-align: center;
+      padding: 15px;
+    }
+    .menu-item img {
+      width: 100%;
+      height: 150px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .menu-item h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+      color: #333;
+    }
+    .menu-item p {
+      margin: 0 0 10px;
+      color: #555;
+    }
+    .menu-item button {
+      background: #e67e22;
+      border: none;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .menu-item button:hover {
+      background: #d35400;
+    }
+    /* ตะกร้าอาหาร */
+    #cart {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #2ecc71;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #cart span {
+      background: #fff;
+      color: #2ecc71;
+      padding: 3px 8px;
+      border-radius: 50%;
+      margin-left: 10px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>เมนูยำ / ลาบ</h1>
-    <nav>
-      <ul>
-        <li><a href="/1.html">หน้าแรก</a></li>
-        <li><a href="/index.html">เมนูต้ม</a></li>
-        <li><a href="/8.html">เมนูผัด</a></li>
-        <li><a href="/2.html">เมนูทอด</a></li>
-        <li><a href="/4.html">ของหวาน</a></li>
-        <li><a href="/5.html">เรียกน้ำย่อย</a></li>
-        <li><a href="/6.html">เครื่องดื่ม</a></li>
-        <li><a href="/7.html">เมนูเส้น</a></li>
-        <li><a href="/สั่งอาหาร.html">สั่งอาหาร</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="menu-section">
-    <div class="menu-grid">
-
-      <!-- เมนู 1 -->
-      <div class="menu-card">
-        <img src="https://api2.krua.co/wp-content/uploads/2020/06/SlideBanner1140x507-233.jpg" alt="ลาบหมู">
-        <h3>ลาบหมู</h3>
-        <p><strong>ราคา:</strong> 59 บาท</p>
-        <p><strong>วัตถุดิบ:</strong> หมูสับ, ข้าวคั่ว, พริกป่น, น้ำมะนาว</p>
-        <p><strong>วิธีทำ:</strong> ลวกหมูให้สุก คลุกกับเครื่องลาบ ปรุงรสตามชอบ</p>
-      </div>
-
-
-      <!-- เมนู 3 -->
-      <div class="menu-card">
-        <img src="https://longdan.co.uk/cdn/shop/articles/spicy-mixed-seafood-salad-with-thai-food-ingredients_1200x.jpg?v=1700554699" alt="ยำรวมทะเล">
-        <h3>ยำรวมทะเล</h3>
-        <p><strong>ราคา:</strong> 69 บาท</p>
-        <p><strong>วัตถุดิบ:</strong> กุ้ง, ปลาหมึก, หอย, พริก, น้ำมะนาว</p>
-        <p><strong>วิธีทำ:</strong> ลวกทะเลรวม คลุกกับน้ำยำเผ็ดเปรี้ยวจี๊ดจ๊าด</p>
-      </div>
-
-      <!-- เมนู 4 -->
-      <div class="menu-card">
-        <img src="https://creamcuisine.wordpress.com/wp-content/uploads/2011/07/1.jpg?w=1024" alt="ลาบปลาดุกทอด">
-        <h3>ลาบปลาดุกทอด</h3>
-        <p><strong>ราคา:</strong> 59 บาท</p>
-        <p><strong>วัตถุดิบ:</strong> ปลาดุกทอด, ข้าวคั่ว, พริกป่น, ต้นหอม</p>
-        <p><strong>วิธีทำ:</strong> สับปลาดุกทอด คลุกกับเครื่องลาบ โรยผักสด</p>
-      </div>
-
-      <!-- เมนู 5 -->
-      <div class="menu-card">
-        <img src="https://f.ptcdn.info/170/073/000/qrmvyr101gk7c5an510y-o.jpg" alt="ยำหอยนางรม">
-        <h3>ยำหอยนางรม</h3>
-        <p><strong>ราคา:</strong> 79 บาท</p>
-        <p><strong>วัตถุดิบ:</strong> หอยนางรมสด, กระถิน, พริกเผา, หอมแดง</p>
-        <p><strong>วิธีทำ:</strong> คลุกหอยกับเครื่องยำ เสิร์ฟพร้อมผักสด</p>
-      </div>
-
-      <!-- เมนู 6 -->
-      <div class="menu-card">
-        <img src="https://i.pinimg.com/736x/48/fb/f0/48fbf02cd11f768cc18f64aaa578797f.jpg" alt="ลาบวุ้นเส้นทะเล">
-        <h3>ลาบวุ้นเส้นทะเล</h3>
-        <p><strong>ราคา:</strong> 89 บาท</p>
-        <p><strong>วัตถุดิบ:</strong> วุ้นเส้น, กุ้ง, ปลาหมึก, ข้าวคั่ว</p>
-        <p><strong>วิธีทำ:</strong> ลวกวุ้นเส้นและทะเล คลุกเครื่องลาบ</p>
-      </div>
-
-      <!-- เมนู 7 -->
-      <div class="menu-card">
-        <img src="https://many-menu.com/wp-content/uploads/2022/07/%E0%B8%A2%E0%B8%B3%E0%B9%84%E0%B8%82%E0%B9%88%E0%B8%94%E0%B8%B2%E0%B8%A7.jpg" alt="ยำไข่ดาว">
-        <h3>ยำไข่ดาว</h3>
-        <p><strong>ราคา:</strong> 49 บาท</p>
-        <p><strong>วัตถุดิบ:</strong> ไข่ดาว, พริก, หอมแดง, น้ำมะนาว</p>
-        <p><strong>วิธีทำ:</strong> ทอดไข่ดาวกรอบ แล้วคลุกกับน้ำยำจัดจ้าน</p>
-      </div>
-
-      <!-- เมนู 8 -->
-      <div class="menu-card">
-        <img src="https://img.kapook.com/u/2016/surauch/cook1/u5_2.jpg" alt="ยำวุ้นเส้นหมูสับ">
-        <h3>ยำวุ้นเส้นหมูสับ</h3>
-        <p><strong>ราคา:</strong> 49 บาท</p>
-        <p><strong>วัตถุดิบ:</strong> วุ้นเส้น, หมูสับ, พริก, หอมใหญ่</p>
-        <p><strong>วิธีทำ:</strong> ลวกวุ้นเส้น หมู คลุกน้ำยำเปรี้ยวเผ็ด</p>
-      </div>
-
+  <h1>🍽️ เมนูอาหาร</h1>
+  
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="padthai.jpg" alt="ผัดไทย">
+      <h3>ผัดไทยกุ้งสด</h3>
+      <p>ราคา: 60 บาท</p>
+      <button onclick="addToCart('ผัดไทยกุ้งสด', 60)">+ เพิ่มในตะกร้า</button>
     </div>
-  </main>
+    <div class="menu-item">
+      <img src="somtam.jpg" alt="ส้มตำ">
+      <h3>ส้มตำไทย</h3>
+      <p>ราคา: 50 บาท</p>
+      <button onclick="addToCart('ส้มตำไทย', 50)">+ เพิ่มในตะกร้า</button>
+    </div>
+    <div class="menu-item">
+      <img src="tomyum.jpg" alt="ต้มยำกุ้ง">
+      <h3>ต้มยำกุ้ง</h3>
+      <p>ราคา: 80 บาท</p>
+      <button onclick="addToCart('ต้มยำกุ้ง', 80)">+ เพิ่มในตะกร้า</button>
+    </div>
+  </div>
 
-  <script src="custom.js"></script>
+  <!-- ตะกร้า -->
+  <div id="cart" onclick="showCart()">🛒 ตะกร้า <span id="cart-count">0</span></div>
+
+  <script>
+    let cart = [];
+    
+    function addToCart(name, price) {
+      cart.push({name, price});
+      document.getElementById("cart-count").innerText = cart.length;
+      alert(name + " ถูกเพิ่มในตะกร้าแล้ว!");
+    }
+
+    function showCart() {
+      if(cart.length === 0) {
+        alert("ยังไม่มีสินค้าในตะกร้า");
+        return;
+      }
+      let message = "🛒 สินค้าในตะกร้า:\n";
+      let total = 0;
+      cart.forEach((item, index) => {
+        message += (index+1) + ". " + item.name + " - " + item.price + " บาท\n";
+        total += item.price;
+      });
+      message += "\nรวมทั้งหมด: " + total + " บาท";
+      alert(message);
+    }
+  </script>
 </body>
 </html>
