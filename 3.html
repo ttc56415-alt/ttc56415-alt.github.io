@@ -3,128 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>เมนูอาหาร</title>
-  <style>
-    body {
-      font-family: "Prompt", sans-serif;
-      background: #fff8f0;
-      margin: 0;
-      padding: 0;
-    }
-    h1 {
-      text-align: center;
-      padding: 20px;
-      color: #d35400;
-    }
-    .menu-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-    }
-    .menu-item {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      width: 220px;
-      text-align: center;
-      padding: 15px;
-    }
-    .menu-item img {
-      width: 100%;
-      height: 150px;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-    .menu-item h3 {
-      margin: 10px 0 5px;
-      font-size: 18px;
-      color: #333;
-    }
-    .menu-item p {
-      margin: 0 0 10px;
-      color: #555;
-    }
-    .menu-item button {
-      background: #e67e22;
-      border: none;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    .menu-item button:hover {
-      background: #d35400;
-    }
-    /* ตะกร้า */
-    #cart-box {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background: #2ecc71;
-      color: white;
-      padding: 15px;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-      width: 250px;
-      max-height: 300px;
-      overflow-y: auto;
-    }
-    #cart-box h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
-    }
-    #cart-items {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 5px;
-    }
-    .cart-item button {
-      background: red;
-      padding: 3px 6px;
-      font-size: 12px;
-    }
-    #order-btn {
-      background: #f39c12;
-      color: white;
-      border: none;
-      padding: 8px;
-      width: 100%;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    #order-btn:hover {
-      background: #e67e22;
-    }
-    /* Popup */
-    #popup {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      display: none;
-      justify-content: center;
-      align-items: center;
-    }
-    #popup-message {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      font-size: 20px;
-      color: green;
-      font-weight: bold;
-      text-align: center;
-    }
-  </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>เมนูทอด</h1>
+    <nav>
+      <ul>
+        <li><a href="/1.html">หน้าแรก</a></li>
+        <li><a href="/index.html">เมนูต้ม</a></li>
+        <li><a href="/8.html">เมนูผัด</a></li>
+        <li><a href="/3.html">เมนูยำ/ลาบ</a></li>
+        <li><a href="/4.html">ของหวาน</a></li>
+        <li><a href="/5.html">เรียกน้ำย่อย</a></li>
+        <li><a href="/6.html">เครื่องดื่ม</a></li>
+        <li><a href="/7.html">เมนูเส้น</a></li>
+        <li><a href="/สั่งอาหาร.html">สั่งอาหาร</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="menu-section">
+    <div class="menu-grid">
   <h1>🍽️ เมนูอาหาร</h1>
   
   <div class="menu-container">
