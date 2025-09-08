@@ -53,3 +53,4 @@ function placeOrder() {
     document.getElementById("success-message").style.display = "none";
   }, 3000);
 }
+
