@@ -13,18 +13,35 @@
     header {
       background: #e67e22;
       color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 26px;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    header a {
+      background: white;
+      color: #e67e22;
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
       font-weight: bold;
     }
-    /* เมนูหมวดหมู่ */
+    header a:hover {
+      background: #f5f5f5;
+    }
+    /* หมวดหมู่ */
     nav {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       background: #fff3e0;
       padding: 10px;
-      gap: 15px;
+      gap: 10px;
       border-bottom: 2px solid #eee;
     }
     nav button {
@@ -34,7 +51,7 @@
       padding: 8px 16px;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 15px;
+      font-size: 14px;
     }
     nav button.active {
       background: #d35400;
@@ -174,14 +191,20 @@
   </style>
 </head>
 <body>
-  <header>🍴 เมนูอาหาร</header>
+  <header>
+    <h1>🍴 เมนูอาหาร</h1>
+    <a href="index.html">⬅ กลับหน้าหลัก</a>
+  </header>
 
   <!-- หมวดหมู่ -->
   <nav>
-    <button class="active" onclick="showCategory('fried', this)">เมนูต้ม</button>
-    <button onclick="showCategory('dessert', this)">เมนูทอด</button>
-    <button onclick="showCategory('drink', this)">เมนูยำ/ลาบ</button>
-    <button onclick="showCategory('drink', this)">เมนูยำ/ลาบ</button>
+    <button class="active" onclick="showCategory('fried', this)">เมนูทอด 🍗</button>
+    <button onclick="showCategory('dessert', this)">ของหวาน 🍨</button>
+    <button onclick="showCategory('drink', this)">เครื่องดื่ม 🥤</button>
+    <button onclick="showCategory('boiled', this)">เมนูต้ม 🍲</button>
+    <button onclick="showCategory('stir', this)">เมนูผัด 🍳</button>
+    <button onclick="showCategory('appetizer', this)">เมนูเรียกน้ำย่อย 🥟</button>
+    <button onclick="showCategory('noodle', this)">เมนูเส้น 🍜</button>
   </nav>
 
   <!-- กล่องเมนู -->
@@ -203,30 +226,32 @@
   <script>
     const menus = {
       fried: [
-        {name: "ต้มยำกุ้ง", price: 89, img: "https://f.ptcdn.info/360/045/000/oc9ecl2i3yt4Q1or4uX-o.jpg"},
-        {name: "ต้มข่าไก่", price: 79, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfwVGfcTStEeNev_p6RVK2NeI-w-4i7LCFEw&s"},
-        {name: "แกงอ่อมหมู", price: 89, img: "https://assets.unileversolutions.com/recipes-v2/117787.jpg"},
-        {name: "แกงส้มชะอมไข่กุ้ง", price: 120, img: "https://www.sgethai.com/wp-content/uploads/2022/11/10.jpg"},
-        {name: "ต้มแซ่บกระดูกอ่อน", price: 79, img: "https://img.kapook.com/u/2023/wanwanat/2082317182.jpg"},
-        {name: "แกงเห็ดสามอย่าง", price: 79, img: "https://img.wongnai.com/p/1920x0/2017/12/01/3f437fb5eff34ad7a797228d8e3aa072.jpg"},
-        {name: "ต้มยำปลานิล", price: 89, img: "https://recipe.sgethai.com/wp-content/uploads/2025/04/16042024-tom-yum-pla-nil9.webp"},
-        {name: "ต้มส้มปลาทู", price: 79, img: "https://img.kapook.com/u/2018/surauch/cooking/co1/tom2_1.jpg"}
+        {name: "ไก่ทอด", price: 50, img: "fried_chicken.jpg"},
+        {name: "ปลาทอดกรอบ", price: 80, img: "fried_fish.jpg"}
       ],
       dessert: [
-        {name: "ปลาทูทอดน้ำปลา", price: 79, img: "https://i.pinimg.com/736x/b4/7b/38/b47b388aef314f7c35cc0b3bac7bfd72.jpg"},
-        {name: "ไก่ทอดสมุนไพร", price: 89, img: "https://img.wongnai.com/p/1920x0/2019/08/22/9e525ec1ede6433b977231724b9c4746.jpg"},
-        {name: "ปลาหมึกทอดกระเทียม", price: 60, img: "https://s359.kapook.com/pagebuilder/b5a76fcc-4fcb-4efb-9aca-54e3f33994da.jpg"},
-        {name: "ปลานิลทอดน้ำปลา", price: 89, img: "https://i.ytimg.com/vi/44lBeWFoEcg/maxresdefault.jpg"},
-        {name: "กุ้งชุบแป้งทอด", price: 89, img: "https://s359.kapook.com/pagebuilder/c2b118ed-2478-4730-8228-bb58c18267fd.jpg"},
-        {name: "ปีกไก่ทอดน้ำปลา", price: 79, img: "https://s.isanook.com/wo/0/ud/50/252221/tnlsss.jpg?ip/crop/w670h402/q80/jpg"},
-        {name: "หมูแดดเดียว", price: 79, img: "https://www.pitchameat.com/wp-content/uploads/2023/08/1-1.webp"}
+        {name: "บัวลอย", price: 40, img: "bualoy.jpg"},
+        {name: "ข้าวเหนียวมะม่วง", price: 60, img: "mango_sticky.jpg"}
       ],
       drink: [
-        {name: "ลาบหมู", price: 59, img: "https://api2.krua.co/wp-content/uploads/2020/06/SlideBanner1140x507-233.jpg"},
-        {name: "ยำรวมทะเล", price: 60, img: "https://longdan.co.uk/cdn/shop/articles/spicy-mixed-seafood-salad-with-thai-food-ingredients_1200x.jpg?v=1700554699"},
-        {name: "ลาบปลาดุกทอด", price: 59, img: "https://creamcuisine.wordpress.com/wp-content/uploads/2011/07/1.jpg?w=1024"},
-        {name: "ยำหอยนางรม", price: 79, img: "https://f.ptcdn.info/170/073/000/qrmvyr101gk7c5an510y-o.jpg"},
-        {name: "ลาบวุ้นเส้นทะเล", price: 89, img: "https://media-cdn.tripadvisor.com/media/photo-s/16/a7/f9/c1/caption.jpg"}
+        {name: "ชาเย็น", price: 30, img: "thaitea.jpg"},
+        {name: "น้ำมะพร้าว", price: 25, img: "coconut.jpg"}
+      ],
+      boiled: [
+        {name: "ต้มยำกุ้ง", price: 90, img: "tomyum.jpg"},
+        {name: "แกงจืดเต้าหู้หมูสับ", price: 60, img: "clear_soup.jpg"}
+      ],
+      stir: [
+        {name: "ผัดไทยกุ้งสด", price: 70, img: "padthai.jpg"},
+        {name: "ผัดกะเพราไก่", price: 55, img: "kaprao.jpg"}
+      ],
+      appetizer: [
+        {name: "ปอเปี๊ยะทอด", price: 45, img: "springroll.jpg"},
+        {name: "ยำวุ้นเส้น", price: 60, img: "yum_wunsen.jpg"}
+      ],
+      noodle: [
+        {name: "ก๋วยเตี๋ยวหมูน้ำตก", price: 50, img: "noodle_pork.jpg"},
+        {name: "ก๋วยเตี๋ยวต้มยำ", price: 55, img: "noodle_tomyum.jpg"}
       ]
     };
 
