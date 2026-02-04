@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Happy Birthday 🎂✨</title>
+<style>
+  :root{
+    --bg1:#ffeef7;
+    --bg2:#e7f8ff;
+    --accent:#ff7eb6;
+    --accent-2:#7ad7ff;
+    --accent-3:#ffd166;
+    --text:#333;
+    --white:#fff;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: ui-rounded, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Thai", "Noto Sans", sans-serif;
+    color:var(--text);
+    background: radial-gradient(1200px 800px at 70% -10%, var(--bg2), transparent 60%),
+                radial-gradient(1200px 800px at 0% 110%, var(--bg1), transparent 60%),
+                linear-gradient(180deg, #fff, #fff);
+    min-height:100svh;
+    overflow:hidden;
+  }
+
+  /* ฟองหัวใจพื้นหลัง */
+  .hearts{
+    position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.5;
+    background:
+      radial-gradient(12px 10px at 8px 10px, #ff9ecd 98%, #0000) 0 0/60px 60px,
+      radial-gradient(12px 10px at 28px 10px, #ff9ecd 98%, #0000) 0 0/60px 60px,
+      conic-gradient(from 45deg at 18px 18px, #ff9ecd 90deg, #0000 0) 0 0/60px 60px;
+    filter: blur(1px) saturate(1.2);
+    animation: heartsFloat 18s linear infinite;
+  }
+  @keyframes heartsFloat { to { background-position: 0 600px, 0 600px, 0 600px; } }
+
+  /* กล่องกลาง */
+  .wrap{position:relative; z-index:2; display:grid; place-items:center; min-height:100svh; padding:24px;}
+  .card{
+    width:min(720px, 92vw);
+    background:rgba(255,255,255,.7);
+    backdrop-filter: blur(10px);
+    border-radius:24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.08);
+    padding: clamp(20px, 4vw, 36px);
+    text-align:center;
+    border:1px solid rgba(0,0,0,.05);
+  }
+  h1{
+    font-size: clamp(28px, 6vw, 44px);
+    margin: 6px 0 10px;
+    background: linear-gradient(90deg, #ff7eb6, #7ad7ff, #ffd166);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    letter-spacing:.5px;
+  }
+  .subtitle{
+    font-size: clamp(14px, 3.5vw, 18px);
+    opacity:.8;
+  }
+
+  /* ปุ่ม */
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    margin-top:16px; padding:14px 22px; border-radius:999px; border:0;
+    background:linear-gradient(135deg, var(--accent), #ffb3d6);
+    color:#fff; font-weight:700; cursor:pointer;
+    box-shadow:0 10px 20px rgba(255,126,182,.35);
+    transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
+  }
+  .btn:hover{ transform: translateY(-1px) scale(1.02); filter:saturate(1.1); box-shadow:0 14px 26px rgba(255,126,182,.42);}
+  .btn:active{ transform: translateY(0) scale(.98); }
+
+  /* พื้นที่แสดงผลหลังเปิดกล่องของขวัญ */
+  .stage{ position:relative; margin-top:18px; min-height: 300px; }
+  .typewriter{
+    min-height: 64px;
+    font-size: clamp(16px, 4.2vw, 22px);
+    line-height:1.5;
+    white-space: pre-wrap;
+  }
+
+  /* เค้ก (SVG) */
+  .cake { width:min(420px, 80vw); margin: 6px auto 6px; transform: translateZ(0); }
+  .flame{ transform-origin:center; animation: flicker .18s infinite alternate ease-in-out; }
+  @keyframes flicker { from{ transform: scale(1) translateX(-.6px);} to{ transform: scale(1.04) translateX(.6px);} }
+
+  /* ลูกโป่ง */
+  .balloon{
+    position:fixed; bottom:-80px; width:40px; aspect-ratio: 3/4; border-radius: 50% 50% 45% 45%;
+    background:var(--accent);
+    box-shadow: inset -8px -12px 20px rgba(0,0,0,.12);
+    animation: rise linear forwards;
+    z-index:3;
+  }
+  .balloon::after{
+    content:""; position:absolute; left:50%; bottom:-18px; width:2px; height:60px; background:rgba(0,0,0,.15); transform:translateX(-50%);
+  }
+  @keyframes rise{ to{ transform: translateY(-120vh) translateX(var(--drift,0)); } }
+
+  /* คอนเฟตติ */
+  .confetti{
+    position: fixed; top:-10px; width:10px; height:14px; z-index:4; opacity:.9;
+    animation: fall linear forwards;
+  }
+  @keyframes fall{
+    to { transform: translateY(110vh) rotate(720deg); opacity: 1;}
+  }
+
+  /* แถบมุมล่าง */
+  .footer-note{
+    position: fixed; left:50%; bottom:14px; transform: translateX(-50%);
+    font-size:12px; opacity:.6; z-index:2; background: rgba(255,255,255,.7);
+    padding:6px 10px; border-radius: 999px; border:1px solid rgba(0,0,0,.06);
+  }
+
+  /* หน้าปิดก่อนเริ่ม */
+  .cover{
+    position:fixed; inset:0; z-index:5; display:grid; place-items:center;
+    background: radial-gradient(1200px 800px at 30% -10%, #fff6fb, transparent 60%),
+                linear-gradient(180deg, #ffffff 20%, #ffeaf4 140%);
+    transition: opacity .6s ease, visibility .6s ease;
+  }
+  .cover.hide{ opacity:0; visibility:hidden; }
+  .gift-card{
+    width:min(560px, 88vw); background:#fff; border-radius:22px; padding:24px; text-align:center;
+    box-shadow: 0 20px 60px rgba(0,0,0,.08);
+    border:1px solid rgba(0,0,0,.05);
+  }
+  .gift-emoji{ font-size: clamp(48px, 12vw, 72px); }
+</style>
+</head>
+<body>
+  <div class="hearts" aria-hidden="true"></div>
+
+  <!-- หน้าปิดก่อนเซอร์ไพรส์ -->
+  <div class="cover" id="cover">
+    <div class="gift-card">
+      <div class="gift-emoji">🎁✨</div>
+      <h2 style="margin:8px 0 6px;">พร้อมรับเซอร์ไพรส์วันเกิดไหม?</h2>
+      <div class="subtitle">กดปุ่มด้านล่างแล้วยิ้มกว้าง ๆ เลยนะ 😊</div>
+      <button class="btn" id="startBtn">กดเปิดเซอร์ไพรส์ ✨</button>
+      <div style="font-size:12px; opacity:.7; margin-top:8px;">(เปิดเสียงไว้ถ้ามีเพลงประกอบ)</div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="card">
+      <h1 id="title">Happy Birthday 🎂</h1>
+      <div class="subtitle" id="subtitle">วันนี้เป็นวันพิเศษของคุณนะ!</div>
+
+      <div class="stage">
+        <!-- เค้ก SVG น่ารัก -->
+        <svg class="cake" viewBox="0 0 240 200" aria-label="เค้กวันเกิด">
+          <!-- จาน -->
+          <ellipse cx="120" cy="176" rx="88" ry="12" fill="#e6f6ff"/>
+          <!-- ชั้นเค้ก -->
+          <rect x="48" y="120" width="144" height="44" rx="8" fill="#ffdce8" />
+          <rect x="60" y="88" width="120" height="36" rx="8" fill="#fff1b8" />
+          <!-- ครีมลอน -->
+          <g fill="#ffffff">
+            <circle cx="70" cy="120" r="10"/><circle cx="90" cy="120" r="10"/>
+            <circle cx="110" cy="120" r="10"/><circle cx="130" cy="120" r="10"/>
+            <circle cx="150" cy="120" r="10"/><circle cx="170" cy="120" r="10"/>
+          </g>
+          <!-- เทียน -->
+          <g>
+            <rect x="90" y="60" width="8" height="28" rx="2" fill="#7ad7ff"/>
+            <rect x="142" y="60" width="8" height="28" rx="2" fill="#ff7eb6"/>
+            <!-- เปลวไฟ -->
+            <g class="flame">
+              <path d="M94 56 q4 -10 0 -18 q-4 8 0 18" fill="#ffd166"/>
+              <path d="M146 56 q4 -10 0 -18 q-4 8 0 18" fill="#ffd166"/>
+            </g>
+          </g>
+          <!-- สตรอว์เบอร์รี -->
+          <g>
+            <circle cx="80" cy="96" r="6" fill="#ff7eb6"/><circle cx="160" cy="96" r="6" fill="#ff7eb6"/>
+            <circle cx="120" cy="100" r="7" fill="#ff7eb6"/>
+          </g>
+        </svg>
+
+        <div class="typewriter" id="typewriter" aria-live="polite"></div>
+        <button class="btn" id="confettiBtn" style="display:none; margin-top:12px;">เปิดของขวัญเพิ่ม 🎉</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">ทำด้วยรัก 💗 เปิดในมือถือก็สวย</div>
+
+<script>
+  //— แก้ชื่อกับข้อความตรงนี้ —//
+  const receiverName = "คนเก่งของเรา";
+  const title = `Happy Birthday, ${receiverName}! 🎉`;
+  const sub = "ขอให้วันนี้เต็มไปด้วยรอยยิ้มและสิ่งดี ๆ นะ 💝";
+  const messages = [
+    "🎈 เซอร์ไพรส์! วันนี้เป็นของคุณ",
+    "🥳 มีความสุขมาก ๆ สุขภาพแข็งแรง",
+    "✨ ขอให้สมหวังในทุกสิ่งที่ตั้งใจ",
+    "💗 You are loved — today and every day."
+  ];
+  // หากมีเพลงของคุณเอง: วางไฟล์ในโฟลเดอร์เดียวกันและเอา // ออก
+  // const bgm = new Audio("birthday.mp3"); bgm.volume = 0.6;
+
+  //— โค้ดเริ่ม —//
+  const $ = (s)=>document.querySelector(s);
+  const titleEl = $("#title");
+  const subEl = $("#subtitle");
+  titleEl.textContent = title;
+  subEl.textContent = sub;
+
+  // เปิดเซอร์ไพรส์
+  $("#startBtn").addEventListener("click", ()=>{
+    $("#cover").classList.add("hide");
+    startShow();
+    // try{ bgm.play(); }catch(e){}
+  });
+
+  // เริ่มโชว์: ลูกโป่ง + พิมพ์ข้อความ + คอนเฟตติชุดแรก
+  function startShow(){
+    spawnBalloons(28);
+    burstConfetti(220);
+    typeSequence(messages, $("#typewriter"), 26, 900, ()=> {
+      $("#confettiBtn").style.display = "inline-flex";
+    });
+  }
+
+  // พิมพ์ทีละตัว
+  function typeSequence(lines, el, cps=24, pause=800, done){
+    let i=0;
+    const typeLine = ()=>{
+      if(i>=lines.length){ done && done(); return; }
+      el.textContent = "";
+      typeText(lines[i], el, cps, ()=>{ i++; setTimeout(typeLine, pause);});
+    };
+    typeLine();
+  }
+  function typeText(text, el, cps, cb){
+    let i=0; const timer = setInterval(()=>{
+      el.textContent = text.slice(0, ++i);
+      if(i>=text.length){ clearInterval(timer); cb && cb(); }
+    }, Math.max(8, 1000/cps));
+  }
+
+  // ลูกโป่งลอย
+  function spawnBalloons(count=20){
+    const colors = ["#ff7eb6","#7ad7ff","#ffd166","#b5f0a8","#c7b3ff"];
+    for(let i=0;i<count;i++){
+      setTimeout(()=>{
+        const b = document.createElement("div");
+        b.className = "balloon";
+        const size = 34 + Math.random()*18;
+        b.style.width = size+"px";
+        b.style.left = Math.random()*100+"vw";
+        b.style.background = colors[i % colors.length];
+        b.style.setProperty("--drift", (Math.random()*80-40)+"px");
+        const dur = 9 + Math.random()*6;
+        b.style.animationDuration = dur+"s";
+        document.body.appendChild(b);
+        setTimeout(()=> b.remove(), (dur+1)*1000);
+      }, i*180);
+    }
+  }
+
+  // คอนเฟตติ
+  function burstConfetti(amount=160){
+    const colors = ["#ff7eb6","#7ad7ff","#ffd166","#a7f3d0","#c4b5fd"];
+    for(let i=0;i<amount;i++){
+      const c = document.createElement("div");
+      c.className="confetti";
+      c.style.left = Math.random()*100+"vw";
+      c.style.background = colors[i % colors.length];
+      c.style.transform = `translateY(-10px) rotate(${Math.random()*360}deg)`;
+       c.style.animationDuration = (6+Math.random()*3)+"s";
+      c.style.width = (6+Math.random()*7)+"px";
+      c.style.height= (8+Math.random()*9)+"px";
+      c.style.borderRadius = Math.random()>.5 ? "3px":"999px";
+      document.body.appendChild(c);
+      setTimeout(()=> c.remove(), 10000);
+    }
+  }
+  $("#confettiBtn").addEventListener("click", ()=>{
+    burstConfetti(260);
+    spawnBalloons(16);
+  });
+
+  // ป้องกันดับหน้าจอเล็กน้อย (ไม่สำคัญ)
+  document.addEventListener("visibilitychange", ()=> {
+    // ถ้ากลับมาให้โชว์เล็ก ๆ อีกครั้ง
+    if(!document.hidden){ spawnBalloons(10); }
+  });
+</script>
+</body>
+</html>
